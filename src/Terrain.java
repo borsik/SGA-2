@@ -9,6 +9,14 @@ public class Terrain {
     private LinkedList<Point> sourcesOfRadiation;
     private LinkedList<Point> path;
 
+    public int getWidth(){
+        return width;
+    }
+
+    public int getHeight(){
+        return height;
+    }
+
 
     public Terrain(int width, int height){
 
@@ -54,10 +62,9 @@ public class Terrain {
     public void calculateRadiation(){
         for(int i = 0; i < height; i++){
             for(int j = 0; j < width; j++){
-                if(terrain[i][j].getType() == 0){
-                    for (Point p: sourcesOfRadiation ) {
+                for (Point p: sourcesOfRadiation ) {
+                    if(p.y() != i && p.x() != j)
                         terrain[i][j].setRadiation(terrain[i][j].getRadiation() + a / length(i,j,p) );
-                    }
                 }
             }
         }

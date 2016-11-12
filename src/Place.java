@@ -1,13 +1,13 @@
 
 public class Place {
-    private double radiation;
+    private Double radiation;
     private int type;
     private boolean isStart;
     private boolean isFinish;
     private boolean isPath;
 
 
-    public double getRadiation() {
+    public Double getRadiation() {
         return radiation;
     }
 
